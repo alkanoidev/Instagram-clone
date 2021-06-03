@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Instagram</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_add">add</string>
+    <string name="title_activity">activity</string>
+    <string name="title_messages">messages</string>
+    <string name="todo">TODO</string>
+</resources>

@@ -1,5 +1,6 @@
 package me.alkanoidev.instagram.ui.story
 
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,12 +14,16 @@ import me.alkanoidev.instagram.R
 
 class StoryAdapter(var imageList: MutableList<StoryModel>):RecyclerView.Adapter<StoryAdapter.ViewHolder>(){
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView
+        val profilePic: ImageView
         val textView: TextView
+        val plusIcon: ImageView
+        val gradient: ImageView
 
         init {
-            imageView=itemView.findViewById(R.id.story_image_view)
+            profilePic=itemView.findViewById(R.id.story_image_view)
             textView=itemView.findViewById(R.id.story_name)
+            plusIcon=itemView.findViewById(R.id.plus_icon)
+            gradient=itemView.findViewById(R.id.gradient_round)
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoryAdapter.ViewHolder {
@@ -27,12 +32,18 @@ class StoryAdapter(var imageList: MutableList<StoryModel>):RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: StoryAdapter.ViewHolder, position: Int) {
-        holder.imageView.load(imageList[position].url)
+        if(position==0) {
+            holder.plusIcon.visibility = View.VISIBLE
+            holder.gradient.visibility = View.INVISIBLE
+        }else{
+            holder.plusIcon.visibility=View.INVISIBLE
+            holder.gradient.visibility=View.VISIBLE
+        }
+        holder.profilePic.load(imageList[position].url)
         holder.textView.text=imageList[position].name
     }
     private fun ImageView.load(imageAddress: String) {
-        Glide
-                .with(context)
+        Glide.with(context)
                 .load(imageAddress).apply(RequestOptions().override(110, 110))
                 .circleCrop()
                 .into(this)
@@ -41,5 +52,7 @@ class StoryAdapter(var imageList: MutableList<StoryModel>):RecyclerView.Adapter<
     override fun getItemCount(): Int {
         return imageList.size
     }
+
+
 
 }

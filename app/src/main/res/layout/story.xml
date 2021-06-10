@@ -13,17 +13,18 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
         android:src="@android:mipmap/sym_def_app_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        app:layout_constraintBottom_toBottomOf="@+id/gradient_round"
+        app:layout_constraintEnd_toEndOf="@+id/gradient_round"
+        app:layout_constraintStart_toStartOf="@+id/gradient_round"
+        app:layout_constraintTop_toTopOf="@+id/gradient_round" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/gradient_round"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:contentDescription="@null"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/story_gradient">
@@ -36,8 +37,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/gradient_round"
         tools:text="@tools:sample/cities" />
+
+    <ImageView
+        android:id="@+id/plus_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/gradient_round"
+        app:layout_constraintEnd_toEndOf="@+id/gradient_round"
+        app:srcCompat="@drawable/ic_plus_blue" />
 </androidx.constraintlayout.widget.ConstraintLayout>

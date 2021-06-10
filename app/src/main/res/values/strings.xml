@@ -7,4 +7,6 @@
     <string name="title_activity">activity</string>
     <string name="title_messages">messages</string>
     <string name="todo">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

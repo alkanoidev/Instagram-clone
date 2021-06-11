@@ -3,27 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/homeFragment"
         android:name="me.alkanoidev.instagram.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_accountFragment"
-            app:destination="@id/accountFragment" />
+            android:id="@+id/action_homeFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment" />
     </fragment>
-
-
     <fragment
-        android:id="@+id/storyFragment"
-        android:name="me.alkanoidev.instagram.ui.story.StoryFragment"
-        android:label="fragment_story"
-        tools:layout="@layout/fragment_story" />
-    <fragment
-        android:id="@+id/accountFragment"
-        android:name="me.alkanoidev.instagram.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/messagesFragment"
+        android:name="me.alkanoidev.instagram.ui.messages.MessagesFragment"
+        android:label="fragment_messages"
+        tools:layout="@layout/fragment_messages" >
+        <action
+            android:id="@+id/action_messagesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

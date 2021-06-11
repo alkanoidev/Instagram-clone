@@ -1,15 +1,12 @@
 package me.alkanoidev.instagram
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.*
-import me.alkanoidev.instagram.ui.story.StoryAdapter
-import me.alkanoidev.instagram.ui.story.StoryModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         navView.setupWithNavController(navController)
 
-
+        val messagesNav: ImageView=findViewById(R.id.messages)
+        messagesNav.setOnClickListener{ navController.navigate(R.id.action_homeFragment_to_messagesFragment)}
     }
 
 }

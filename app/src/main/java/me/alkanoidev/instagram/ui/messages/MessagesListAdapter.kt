@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import me.alkanoidev.instagram.R
 
-class MessagesListAdapter():
+class MessagesListAdapter(var data: MutableList<MessageModel>):
         RecyclerView.Adapter<MessagesListAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
